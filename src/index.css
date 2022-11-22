@@ -6,8 +6,4 @@
   html {
     font-family: "Nunito Sans", sans-serif;
   }
-
-  body {
-    @apply bg-[hsl(0_0%_98%)];
-  }
 }
