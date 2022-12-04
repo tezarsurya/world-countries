@@ -91,7 +91,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main className='flex min-h-screen flex-col justify-start bg-[#eeeeee] py-8 px-6 transition-colors duration-200 ease-linear dark:bg-[#202c37] lg:px-12 xl:px-16 2xl:px-32'>
+      <main className='flex min-h-screen flex-col justify-start bg-[#eeeeee] py-8 px-6 dark:bg-[#202c37] lg:px-12 xl:px-16 2xl:px-32'>
         <div className='flex flex-col md:flex-row md:justify-between'>
           <div className='relative w-full md:w-[60%] lg:w-[50%] xl:w-[40%]'>
             <label
@@ -110,7 +110,7 @@ export default function App() {
               onInput={handleInput}
               onBeforeInput={() => setSearchLoading(true)}
               value={search}
-              className='w-full rounded-md py-3 pr-5 pl-14 shadow-lg outline-none transition-colors duration-300 ease-in-out focus:ring-2 focus:ring-emerald-500 dark:bg-[#2b3945] dark:text-white/90'
+              className='w-full rounded-md py-3 pr-5 pl-14 shadow-lg outline-none focus:ring-2 focus:ring-emerald-500 dark:bg-[#2b3945] dark:text-white/90'
             />
           </div>
           <FilterDropdown />
