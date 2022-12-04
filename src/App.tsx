@@ -76,14 +76,6 @@ export default function App() {
   };
 
   useEffect(() => {
-    const root = document.documentElement;
-
-    theme === "dark"
-      ? root.classList.add("dark")
-      : root.removeAttribute("class");
-  }, [theme]);
-
-  useEffect(() => {
     setRegion((oldRegion) => "Filter by Region");
     fetchByName(search);
   }, [debouncedSearch]);

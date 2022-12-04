@@ -1,5 +1,6 @@
 import { SunIcon } from "@heroicons/react/24/outline";
 import MoonIcon from "@heroicons/react/24/outline/MoonIcon";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { themeState } from "../lib/recoil/atoms";
 
@@ -9,23 +10,31 @@ const Navbar = () => {
     setTheme((oldTheme) => (oldTheme === "dark" ? "light" : "dark"));
   };
 
+  useEffect(() => {
+    const root = document.documentElement;
+
+    theme === "dark"
+      ? root.classList.add("dark")
+      : root.removeAttribute("class");
+  }, [theme]);
+
   return (
-    <header className='sticky top-0 z-20 bg-white py-6 text-[#111517] shadow-lg dark:bg-[#2b3945] dark:text-white/90'>
-      <nav className='flex items-center justify-between px-6 lg:px-12 xl:px-16 2xl:px-32'>
+    <header className="sticky top-0 z-20 bg-white py-6 text-[#111517] shadow-lg dark:bg-[#2b3945] dark:text-white/90">
+      <nav className="flex items-center justify-between px-6 lg:px-12 xl:px-16 2xl:px-32">
         <div>
-          <h1 className='font-bold md:text-lg xl:text-xl'>
+          <h1 className="font-bold md:text-lg xl:text-xl">
             Where in the world?
           </h1>
         </div>
         <button
-          type='button'
+          type="button"
           onClick={handleTheme}
-          className='grid place-items-center'
+          className="grid place-items-center"
         >
           {theme === "light" ? (
-            <MoonIcon className='h-5 w-5 stroke-2' />
+            <MoonIcon className="h-5 w-5 stroke-2" />
           ) : (
-            <SunIcon className='h-6 w-6 stroke-2' />
+            <SunIcon className="h-6 w-6 stroke-2" />
           )}
         </button>
       </nav>
