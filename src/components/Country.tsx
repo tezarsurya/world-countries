@@ -22,7 +22,7 @@ const Country = ({
       to={`/${code}`}
       className='self-stretch transition-all duration-150 ease-in hover:-translate-y-1'
     >
-      <div className='flex h-full flex-col rounded-md bg-white shadow-xl transition-colors duration-200 ease-in-out dark:bg-[#2b3945] dark:text-white/90'>
+      <div className='flex h-full flex-col rounded-md bg-white shadow-xl dark:bg-[#2b3945] dark:text-white/90'>
         <img
           src={flag}
           alt={`flag of ${name}`}
