@@ -42,7 +42,7 @@ export default function App() {
 
     try {
       const response = await axios.get(
-        `https://restcountries.com/v3.1/name/${query}`,
+        `https://restcountries.com/v3.1/name/${query}`
       );
       setIsFetchError(false);
       setCountries(response.data);
@@ -68,7 +68,7 @@ export default function App() {
       },
       refetchOnWindowFocus: false,
       retry: 1,
-    },
+    }
   );
 
   const handleInput = (e: FormEvent<HTMLInputElement>) => {
@@ -91,26 +91,26 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main className='flex min-h-screen flex-col justify-start bg-[#eeeeee] py-8 px-6 dark:bg-[#202c37] lg:px-12 xl:px-16 2xl:px-32'>
-        <div className='flex flex-col md:flex-row md:justify-between'>
-          <div className='relative w-full md:w-[60%] lg:w-[50%] xl:w-[40%]'>
+      <main className="flex min-h-screen flex-col justify-start bg-[#eeeeee] py-8 px-6 dark:bg-[#202c37] lg:px-12 xl:px-16 2xl:px-32">
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="relative w-full md:w-[60%] lg:w-[50%] xl:w-[40%]">
             <label
-              htmlFor='search'
-              className='absolute top-0 left-5 bottom-0 grid place-items-center'
+              htmlFor="search"
+              className="absolute top-0 left-5 bottom-0 grid place-items-center"
             >
-              <MagnifyingGlassIcon className='h-6 w-6 text-[#858585]' />
+              <MagnifyingGlassIcon className="h-6 w-6 text-[#858585]" />
             </label>
             <input
-              type='text'
-              name='search'
-              id='search'
-              placeholder='Search for a country...'
-              autoComplete='off'
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search for a country..."
+              autoComplete="off"
               autoFocus={false}
               onInput={handleInput}
               onBeforeInput={() => setSearchLoading(true)}
               value={search}
-              className='w-full rounded-md py-3 pr-5 pl-14 shadow-lg outline-none focus:ring-2 focus:ring-emerald-500 dark:bg-[#2b3945] dark:text-white/90'
+              className="w-full rounded-md py-3 pr-5 pl-14 shadow-lg outline-none focus:ring-2 focus:ring-emerald-500 dark:bg-[#2b3945] dark:text-white/90"
             />
           </div>
           <FilterDropdown />
@@ -137,14 +137,14 @@ export default function App() {
                     capital={capital}
                     region={region}
                   />
-                ),
+                )
               )}
             </>
           ) : (
             <div>Error</div>
           )}
         </div>
-        {region === "Filter by Region" ? (
+        {filteredCountries.length >= 16 ? (
           <div
             className={`${
               count > filteredCountries.length ||
@@ -158,7 +158,7 @@ export default function App() {
           >
             <button
               onClick={() => setCount((oldCount) => oldCount + 16)}
-              className='rounded-md bg-white py-2 px-4 font-semibold shadow-xl ring-emerald-500 hover:ring-2 dark:bg-[#2b3945] dark:text-white/90'
+              className="rounded-md bg-white py-2 px-4 font-semibold shadow-xl ring-emerald-500 hover:ring-2 dark:bg-[#2b3945] dark:text-white/90"
             >
               Load More
             </button>

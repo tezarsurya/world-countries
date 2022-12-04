@@ -10,23 +10,33 @@ export const regionFilter = selector({
 
     switch (region) {
       case "Africa":
-        return countries.filter((country: any) => country.region == "Africa");
+        return countries
+          .filter((country: any) => country.region == "Africa")
+          .slice(0, count);
         break;
 
       case "Americas":
-        return countries.filter((country: any) => country.region == "Americas");
+        return countries
+          .filter((country: any) => country.region == "Americas")
+          .slice(0, count);
         break;
 
       case "Asia":
-        return countries.filter((country: any) => country.region == "Asia");
+        return countries
+          .filter((country: any) => country.region == "Asia")
+          .slice(0, count);
         break;
 
       case "Europe":
-        return countries.filter((country: any) => country.region == "Europe");
+        return countries
+          .filter((country: any) => country.region == "Europe")
+          .slice(0, count);
         break;
 
       case "Oceania":
-        return countries.filter((country: any) => country.region == "Oceania");
+        return countries
+          .filter((country: any) => country.region == "Oceania")
+          .slice(0, count);
         break;
 
       default:
